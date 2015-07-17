@@ -1,0 +1,5 @@
+template(name='visiters')
+  button(onclick='Meteor.loginWithTwitter()')
+  each visiters
+    {{profile.name}}
+    img(src=profile.image)

@@ -15,3 +15,5 @@ iron:router
 
 npm-container
 mquandalle:jade
+materialize:materialize
+planettraining:material-design-icons

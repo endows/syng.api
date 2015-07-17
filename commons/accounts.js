@@ -6,7 +6,7 @@ if (Meteor.isServer) {
     user._id = user.services.twitter.id
     var async = function(callback) {
       Meteor.call('getMyFriends',user.services.twitter.id, function(e, result) {
-        user.profile.friends = result
+        user.profile.friends = result.map(String)
         callback(null,user)
       })
     }

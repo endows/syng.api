@@ -1,13 +1,21 @@
 Router.route('/visiters',{
   waitOn:function(){
-    Meteor.subscribe('users',Meteor.user().profile.friends)
+    return [
+      Meteor.subscribe('users',Meteor.user().profile.friends),
+      Meteor.subscribe('status',this.params.query.url)
+    ]
   },
   data:{
-    visiters:function(){
-      return Users.find()
+    watchers:function(){
+      watchers_list = Status.find({url:Session.get('current_url'),type:'watching'}).map(function(doc){
+        return doc.user
+      })
+      return Users.find({_id:{$in:watchers_list}})
     }
   },
   action:function(){
+    Session.set('current_url',this.params.query.url)
+    Meteor.call('watch',Meteor.userId(),Session.get('current_url'))
     this.render('visiters')
   }
 })

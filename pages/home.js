@@ -1,6 +1,6 @@
 Router.route('/home',{
   waitOn:function(){
-    return Meteor.subscribe('allStatus')
+    return [Meteor.subscribe('allStatus'),Meteor.subscribe('users')]
   },
   data:{
     status:function(){

@@ -1,6 +1,12 @@
 template(name='home')
   button(onclick='Meteor.loginWithTwitter()') ログイン
   a(href='http://google.co.jp') Googleへ
-  each status
-    img(src="http://capture.heartrails.com/400x300?#{url}")
-    p {{user}}
+  .row
+    each status
+      .col.s4
+        .card
+          .card-image.waves-effect.waves-block.waves-light
+            img.activator(src="http://capture.heartrails.com/400x300?#{url}")
+          .card-content
+            img.circle(src=user.profile.image)
+            span 閲覧中

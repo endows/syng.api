@@ -10,4 +10,7 @@ if(Meteor.isServer){
   Meteor.publish('status',function(url){
     return Status.find({url:url})
   })
+  Meteor.publish('allStatus',function(url){
+    return Status.find()
+  })
 }

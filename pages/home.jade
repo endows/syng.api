@@ -1,0 +1,6 @@
+template(name='home')
+  button(onclick='Meteor.loginWithTwitter()') ログイン
+  a(href='http://google.co.jp') Googleへ
+  each status
+    img(src="http://capture.heartrails.com/400x300?#{url}")
+    p {{user}}

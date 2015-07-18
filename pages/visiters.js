@@ -14,6 +14,9 @@ Router.route('/visiters',{
     }
   },
   action:function(){
+    if(!Meteor.userId()){
+      Meteor.loginWithTwitter()
+    }
     Session.set('current_url',this.params.query.url)
     Meteor.call('watch',Meteor.userId(),Session.get('current_url'))
     this.render('visiters')

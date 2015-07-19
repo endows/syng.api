@@ -1,6 +1,19 @@
 template(name='home')
-  button(onclick='Meteor.loginWithTwitter()') ログイン
-  a(href='http://google.co.jp') Googleへ
+  link(href='https://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
+  link(href='//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css', rel='stylesheet')
+
+  h1 アプリ
+  .row
+    .col.s1
+      a.btn-floating.btn-large.waves-effect.waves-light.white
+        img.responsive-img(src='http://appllio.com/sites/default/files/styles/icon60/public/gunosy-logo.png')
+    .col.s1
+      a.btn-floating.btn-large.waves-effect.waves-light.white
+        img.responsive-img(src='http://cdn-ak.f.st-hatena.com/images/fotolife/s/sattelle/20130831/20130831090807.jpg')
+    .col.s1
+      a.btn-floating.btn-large.waves-effect.waves-light.white
+        img.responsive-img(src='http://algorhythnn.jp/blg/wp/wp-content/uploads/2014/02/eye_google_old-250x250.png')
+  h1 アクティビティ
   .row
     each status
       .col.s4
@@ -8,5 +21,8 @@ template(name='home')
           .card-image.waves-effect.waves-block.waves-light
             img.activator(src="http://capture.heartrails.com/400x300?#{url}")
           .card-content
-            img.circle(src=user.profile.image)
-            span 閲覧中
+            h6
+              i.fa.fa-eye.fa-lg
+                img.circle(src=user.profile.image)
+            h6
+              i.fa.fa-check-square-o.fa-lg

@@ -15,14 +15,17 @@ template(name='home')
         img.responsive-img(src='http://algorhythnn.jp/blg/wp/wp-content/uploads/2014/02/eye_google_old-250x250.png')
   h1 アクティビティ
   .row
-    each status
+    each contents
       .col.s4
         .card
           .card-image.waves-effect.waves-block.waves-light
             img.activator(src="http://capture.heartrails.com/400x300?#{url}")
           .card-content
             h6
-              i.fa.fa-eye.fa-lg
+              each watchers
+                i.fa.fa-eye.fa-lg
                 img.circle(src=user.profile.image)
             h6
-              i.fa.fa-check-square-o.fa-lg
+              each readers
+                i.fa.fa-check-square-o.fa-lg
+                img.circle(src=profile.image)

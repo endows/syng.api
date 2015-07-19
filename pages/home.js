@@ -1,7 +1,10 @@
 Router.route('/home',{
   data:{
-    status:function(){
-      return Status.find()
+    contents:function(){
+      result = {}
+      return Status.find().fetch().map(function(stat){
+        result[stat.url]
+      })
     }
   },
   action:function(){

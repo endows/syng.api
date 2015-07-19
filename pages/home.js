@@ -1,7 +1,10 @@
 Router.route('/home',{
   data:{
     contents:function(){
-      return Contents.find()
+      function watchersFilter(content){
+        return (content.watchers.fetch().length > 0)
+      }
+      return Contents.find().fetch().filter(watchersFilter)
     }
   },
   action:function(){

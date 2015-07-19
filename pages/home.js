@@ -1,10 +1,7 @@
 Router.route('/home',{
   data:{
     contents:function(){
-      result = {}
-      return Status.find().fetch().map(function(stat){
-        result[stat.url]
-      })
+      return Contents.find()
     }
   },
   action:function(){
@@ -13,6 +10,7 @@ Router.route('/home',{
     }
     Meteor.subscribe('allStatus')
     Meteor.subscribe('users')
+    Meteor.subscribe('contents')
     this.render('home')
   }
 })

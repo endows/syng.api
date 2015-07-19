@@ -22,10 +22,9 @@ template(name='home')
             img.activator(src="http://capture.heartrails.com/400x300?#{url}")
           .card-content
             h6
-              each watchers
-                i.fa.fa-eye.fa-lg
-                img.circle(src=user.profile.image)
+              img(src="http://www.google.com/s2/favicons?domain=#{url}")
+              {{title}}
             h6
-              each readers
-                i.fa.fa-check-square-o.fa-lg
+              span 閲覧中
+              each watchers
                 img.circle(src=profile.image)

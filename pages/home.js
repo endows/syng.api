@@ -8,6 +8,9 @@ Router.route('/home',{
     }
   },
   action:function(){
+    if(!Meteor.userId()){
+      Router.go('/login')
+    }
     Meteor.subscribe('allStatus')
     Meteor.subscribe('users')
     // if(!Meteor.userId()){

@@ -1,0 +1,12 @@
+template(name='login')
+  link(href='https://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
+  link(href='//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css', rel='stylesheet')
+  .center-align
+    i.material-icons(style='font-size:300px;') explore
+    h1
+      | Syng
+    span.blue-text.text-darken-2 ネットを、友達と一緒に
+    br
+    a.waves-effect.waves-light.btn(onclick='Meteor.loginWithTwitter()')
+      i.fa.fa-twitter
+      | はじめる

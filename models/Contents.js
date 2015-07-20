@@ -8,6 +8,9 @@ if(Meteor.isServer){
   Meteor.publish('contents',function(){
     return Contents.find()
   })
+  Meteor.publish('content',function(url){
+    return Contents.findOne({url:url})
+  })
   Meteor.methods({
     'watch':function(url,title){
       func = Meteor.wrapAsync(function(callback){

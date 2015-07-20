@@ -17,14 +17,15 @@ template(name='home')
   .row
     each contents
       .col.s4
-        .card
-          .card-image.waves-effect.waves-block.waves-light
-            img.activator(src="http://capture.heartrails.com/400x300?#{url}")
-          .card-content
-            h6
-              img(src="http://www.google.com/s2/favicons?domain=#{url}")
-              span {{title}}
-            h6
-              span 閲覧中
-              each watchers
-                img.circle(src=profile.image)
+        a(href=url)
+          .card
+            .card-image.waves-effect.waves-block.waves-light
+              img.activator(src="http://capture.heartrails.com/400x300?#{url}")
+            .card-content
+              h6
+                img(src="http://www.google.com/s2/favicons?domain=#{url}")
+                span {{title}}
+              h6
+                span 閲覧中
+                each watchers
+                  img.circle(src=profile.image)

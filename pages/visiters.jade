@@ -1,6 +1,8 @@
 template(name='visiters')
   link(href='https://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
-  i.material-icons remove_red_eye
+  a(href='/home')
+    i.material-icons home
   each watchers
     img(src=profile.image)
+  span 閲覧中
   

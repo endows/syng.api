@@ -9,7 +9,7 @@ if(Meteor.isServer){
     return Contents.find()
   })
   Meteor.publish('content',function(url){
-    return Contents.findOne({url:url})
+    return Contents.find({url:url})
   })
   Meteor.methods({
     'watch':function(url,title){

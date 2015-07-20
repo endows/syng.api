@@ -12,7 +12,8 @@ Router.route('/home',{
       Router.go('/login')
     }
     Meteor.subscribe('allStatus')
-    Meteor.subscribe('users')
+    Meteor.subscribe('me')
+    Meteor.subscribe('friends',Meteor.user().friends)
     Meteor.subscribe('contents')
     this.render('home')
   }
